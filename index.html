@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Simply Less</title>
+    <meta name="author" content="Matthew Howell" />
+    <meta name="description" content="fullPage continuous scrolling demo." />
+    <meta
+      name="keywords"
+      content="fullpage,jquery,demo,scroll,loop,continuous"
+    />
+    <meta name="Resource-type" content="Document" />
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/examples.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/index.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+SC"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+TC"
+      rel="stylesheet"
+    />
+
+    <!--[if IE]>
+      <script type="text/javascript">
+        var console = { log: function() {} };
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+    <ul id="menu">
+      <li data-menuanchor="firstPage" class="active">
+        <a href="#firstPage">Love</a>
+      </li>
+      <li data-menuanchor="secondPage"><a href="#secondPage">Fly</a></li>
+      <li data-menuanchor="3rdPage"><a href="#3rdPage">Dear</a></li>
+      <li data-menuanchor="4thPage"><a href="#4thPage">Open</a></li>
+      <li data-menuanchor="lastPage"><a href="#lastPage">Holy</a></li>
+    </ul>
+
+    <div id="fullpage">
+      <div class="section " id="section0">
+        <h1>
+          <span class="traditional">愛</span> .
+          <span class="simplified">爱</span>
+        </h1>
+        <p class="explanatory">Are we lovers, or are we just friends?</p>
+      </div>
+      <div class="section " id="section1">
+        <h1>
+          <span class="traditional">飛</span> .
+          <span class="simplified">飞</span>
+        </h1>
+        <p class="explanatory">How can we fly with merely one wing?</p>
+      </div>
+      <div class="section " id="section2">
+        <h1>
+          <span class="traditional">親</span> .
+          <span class="simplified">亲</span>
+        </h1>
+        <p class="explanatory">
+          Are they really your dearest, if you can't see them?
+        </p>
+      </div>
+      <div class="section " id="section3">
+        <h1>
+          <span class="traditional">開</span> .
+          <span class="simplified">开</span>
+        </h1>
+        <p class="explanatory">What are you opening when there's no door?</p>
+      </div>
+      <div class="section " id="section4">
+        <h1>
+          <span class="traditional">聖</span> .
+          <span class="simplified">圣</span>
+        </h1>
+        <p class="explanatory">
+          How holy is it when there's no one to hear or speak of it?
+        </p>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="./assets/js/fullpage.js"></script>
+    <script type="text/javascript" src="./assets/js/examples.js"></script>
+
+    <script type="text/javascript">
+      var myFullpage = new fullpage("#fullpage", {
+        sectionsColor: ["#DBBBF5", "#4BBFC3", "#7BAABE", "#7D83FF", "#6C7476"],
+        anchors: ["firstPage", "secondPage", "3rdPage", "4thPage", "lastPage"],
+        menu: "#menu",
+        continuousVertical: true,
+        afterLoad: function(anchorLink, index) {
+          console.log(
+            "AFTER LOAD - anchorLink:" + anchorLink + " index:" + index
+          );
+        },
+        onLeave: function(index, nextIndex, direction) {
+          console.log(
+            "ONLEAVE - index:" +
+              index +
+              " nextIndex:" +
+              nextIndex +
+              " direction:" +
+              direction
+          );
+        }
+      });
+    </script>
+  </body>
+</html>

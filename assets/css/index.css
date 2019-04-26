@@ -1,0 +1,17 @@
+h1 {
+  color: #f0eceb;
+}
+
+.traditional {
+  color: #a3d6f5;
+  font-family: "Noto Sans TC";
+}
+
+.simplified {
+  color: #ee3233;
+  font-family: "Noto Sans SC";
+}
+
+.explanatory {
+  color: #f0eceb;
+}
